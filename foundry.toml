@@ -1,0 +1,44 @@
+[profile.default]
+evm_version = "cancun"
+ffi = true
+fs_permissions = [{access = "read-write", path = ".forge-snapshots/"}]
+libs = ["lib"]
+out = "out"
+solc_version = "0.8.30"
+src = "src"
+via_ir = true
+optimizer = true
+optimizer_runs = 200
+
+[profile.default.optimizer_details]
+yul = true
+
+[profile.default.optimizer_details.yulDetails]
+stack_allocation = true
+optimizer_steps = "dhfoDgvulfnTUtnIf"
+
+[lint]
+exclude_lints = [
+    "screaming-snake-case-immutable",
+    "screaming-snake-case-const",
+    "mixed-case-function",
+    "mixed-case-variable",
+    "named-struct-fields",
+    "unused-import",
+    "unsafe-typecast",
+    "divide-before-multiply",
+    "erc20-unchecked-transfer",
+    "unaliased-plain-import",
+]
+
+[profile.cheap]
+evm_version = "cancun"
+ffi = true
+fs_permissions = [{access = "read-write", path = ".forge-snapshots/"}]
+libs = ["lib"]
+out = "out_cheap"
+solc_version = "0.8.30"
+src = "src"
+via_ir = false
+optimizer = true
+optimizer_runs = 200
